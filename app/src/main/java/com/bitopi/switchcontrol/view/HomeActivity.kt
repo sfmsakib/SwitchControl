@@ -2,6 +2,7 @@ package com.bitopi.switchcontrol.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageButton
 import com.bitopi.switchcontrol.R
 import com.bitopi.switchcontrol.databinding.HomeLayoutBinding
@@ -15,11 +16,16 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         star = binding.onOffButton
+        star.tag = R.drawable.rounded_green
+
         star.setOnClickListener{
+            Log.i("SWITCH_CONTROL_LOG","Inside on click")
             if(star.tag == R.drawable.rounded_green){
+                Log.i("SWITCH_CONTROL_LOG","Inside on click if")
                 star.tag = R.drawable.rounded_red
                 star.setBackgroundResource(R.drawable.rounded_red)
             } else {
+                Log.i("SWITCH_CONTROL_LOG","Inside on click else")
                 star.tag = R.drawable.rounded_green
                 star.setBackgroundResource(R.drawable.rounded_green)
             }
